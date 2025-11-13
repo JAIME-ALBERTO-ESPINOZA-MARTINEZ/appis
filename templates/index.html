@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Buscador de Pokémon{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center min-vh-100">
+    <div class="col-md-6">
+        <div class="card shadow mt-5">
+            <div class="card-body p-5">
+                <h1 class="text-center mb-4">Buscador de Pokémon</h1>
+                
+                <form method="POST" action="{{ url_for('id_pokemon') }}">
+                    <div class="mb-3">
+                        <label for="pokemon_name" class="form-label">Nombre del Pokémon</label>
+                        <input 
+                            type="text" 
+                            class="form-control form-control-lg" 
+                            id="pokemon_name" 
+                            name="pokemon_name" 
+                            placeholder="Ej: pikachu, charizard, mewtwo..."
+                            required>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-danger btn-lg">
+                            Buscar Pokémon
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <p class="text-white">Ingresa el nombre de un Pokémon para ver su información</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
